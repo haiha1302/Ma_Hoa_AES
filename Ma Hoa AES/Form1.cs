@@ -28,12 +28,12 @@ namespace Ma_Hoa_AES
                 }
                 catch
                 {
-                    MessageBox.Show("Không Mã Hóa được", "Chú Ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không Mã Hóa được", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Ô Nội Dung không được rỗng", "Chú Ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ô Nội Dung không được rỗng", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -47,12 +47,12 @@ namespace Ma_Hoa_AES
                 }
                 catch
                 {
-                    MessageBox.Show("Không Giải Mã được", "Chú Ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không Giải Mã được", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Ô Nội Dung không được rỗng", "Chú Ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ô Nội Dung không được rỗng", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -68,6 +68,11 @@ namespace Ma_Hoa_AES
             inputTextDe.Text = "";
             inputDeKey.Text = "";
             txt_Decrypt.Text = "";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

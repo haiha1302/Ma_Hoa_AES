@@ -32,3 +32,13 @@ C:\Users\Dell\OneDrive\Máy tính\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.csp
 C:\Users\Dell\OneDrive\Máy tính\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.csproj.CoreCompileInputs.cache
 C:\Users\Dell\OneDrive\Máy tính\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.exe
 C:\Users\Dell\OneDrive\Máy tính\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.pdb
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\bin\Debug\Ma Hoa AES.exe.config
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\bin\Debug\Ma Hoa AES.exe
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\bin\Debug\Ma Hoa AES.pdb
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.csprojAssemblyReference.cache
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma_Hoa_AES.Form1.resources
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma_Hoa_AES.Properties.Resources.resources
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.csproj.GenerateResource.cache
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.csproj.CoreCompileInputs.cache
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.exe
+C:\Users\Dell\OneDrive\Máy tính\Báo cáo AES\Ma_Hoa_AES\Ma Hoa AES\obj\Debug\Ma Hoa AES.pdb

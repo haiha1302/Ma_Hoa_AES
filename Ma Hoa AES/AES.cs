@@ -13,45 +13,63 @@ namespace Ma_Hoa_AES
         public AES()
         { }
 
+        // Mã hóa mảng byte bằng khóa và vector khởi tạo
         private byte[] Encrypt(byte[] clearData, byte[] Key, byte[] IV)
         { 
-            MemoryStream ms = new MemoryStream();
-            Rijndael alg = Rijndael.Create();
-            alg.Key = Key;
-            alg.IV = IV;
-            CryptoStream cs = new CryptoStream(ms, alg.CreateEncryptor(), CryptoStreamMode.Write);
-            cs.Write(clearData, 0, clearData.Length);
-            cs.Close();
-            byte[] encryptedData = ms.ToArray();
+            MemoryStream memoryStream = new MemoryStream(); // Tạo bộ nhớ
+            Rijndael newRijndael = Rijndael.Create(); // Tạo một đối tượng để thực hiện thuật toán 
+            newRijndael.Key = Key;
+            newRijndael.IV = IV;
+
+            // Tạo luồng lưu file mã hóa
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, newRijndael.CreateEncryptor(), CryptoStreamMode.Write);
+
+            // Ghi dữ liệu vào cryptoStream
+            cryptoStream.Write(clearData, 0, clearData.Length);
+            cryptoStream.Close();
+
+            // Chuyển về dạng array
+            byte[] encryptedData = memoryStream.ToArray();
             return encryptedData;
         }
 
-        /// Returns an encrypted string using Rijndael (128 Bits).
         public string Encrypt(string Data, string Password)
         {
-            byte[] clearBytes = System.Text.Encoding.Unicode.GetBytes(Data);
-            PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, new byte[] { 0x00, 0x01, 0x02, 0x1C, 0x1D, 0x1E, 0x03, 0x04, 0x05, 0x0F, 0x20, 0x21, 0xAD, 0xAF, 0xA4 });
+            byte[] clearBytes = System.Text.Encoding.Unicode.GetBytes(Data); // Chuyển string sang bytes
+
+            // Tạo khóa đối xứng từ chuỗi password
+            PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, new byte[] { 0x00, 0x01, 0x02, 0x1C, 0x1D, 0x1E, 0x03, 0x04, 0x05, 0x0F, 0x20 });
+            
             byte[] encryptedData = Encrypt(clearBytes, pdb.GetBytes(16), pdb.GetBytes(16));
+
+            // Chuyển từ array thành chuỗi
             return Convert.ToBase64String(encryptedData);
         }
 
         private byte[] Decrypt(byte[] cipherData, byte[] Key, byte[] IV)
         {
-            MemoryStream ms = new MemoryStream();
-            Rijndael alg = Rijndael.Create();
-            alg.Key = Key;
-            alg.IV = IV;
-            CryptoStream cs = new CryptoStream(ms, alg.CreateDecryptor(), CryptoStreamMode.Write);
-            cs.Write(cipherData, 0, cipherData.Length);
-            cs.Close();
-            byte[] decryptedData = ms.ToArray();
+            MemoryStream memoryStream = new MemoryStream();
+            Rijndael newRijndael = Rijndael.Create();
+            newRijndael.Key = Key;
+            newRijndael.IV = IV;
+
+            // Tạo luồng lưu file giải mã
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, newRijndael.CreateDecryptor(), CryptoStreamMode.Write);
+            cryptoStream.Write(cipherData, 0, cipherData.Length);
+            cryptoStream.Close();
+
+            // Chuyển về dạng array
+            byte[] decryptedData = memoryStream.ToArray();
             return decryptedData;
         }
  
         public string Decrypt(string Data, string Password)
         {
             byte[] cipherBytes = Convert.FromBase64String(Data);
-            PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, new byte[] { 0x00, 0x01, 0x02, 0x1C, 0x1D, 0x1E, 0x03, 0x04, 0x05, 0x0F, 0x20, 0x21, 0xAD, 0xAF, 0xA4 });
+
+            // Tạo khóa đối xứng từ chuỗi password
+            PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, new byte[] { 0x00, 0x01, 0x02, 0x1C, 0x1D, 0x1E, 0x03, 0x04, 0x05, 0x0F, 0x20 });
+            
             byte[] decryptedData = Decrypt(cipherBytes, pdb.GetBytes(16), pdb.GetBytes(16));
             return System.Text.Encoding.Unicode.GetString(decryptedData);
         }
