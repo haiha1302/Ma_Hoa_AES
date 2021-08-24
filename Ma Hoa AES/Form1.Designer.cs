@@ -100,6 +100,7 @@
             // 
             // txt_Encrypt
             // 
+            this.txt_Encrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Encrypt.Location = new System.Drawing.Point(102, 79);
             this.txt_Encrypt.Name = "txt_Encrypt";
             this.txt_Encrypt.Size = new System.Drawing.Size(630, 91);
@@ -188,6 +189,7 @@
             // 
             // txt_Decrypt
             // 
+            this.txt_Decrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Decrypt.Location = new System.Drawing.Point(102, 79);
             this.txt_Decrypt.Name = "txt_Decrypt";
             this.txt_Decrypt.Size = new System.Drawing.Size(630, 91);

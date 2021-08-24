@@ -14,7 +14,7 @@ namespace Ma_Hoa_AES
         { }
 
         // Mã hóa mảng byte bằng khóa và vector khởi tạo
-        private byte[] Encrypt(byte[] clearData, byte[] Key, byte[] IV)
+        private byte[] Encrypt(byte[] data, byte[] Key, byte[] IV)
         { 
             MemoryStream memoryStream = new MemoryStream(); // Tạo bộ nhớ
             Rijndael newRijndael = Rijndael.Create(); // Tạo một đối tượng để thực hiện thuật toán 
@@ -25,7 +25,7 @@ namespace Ma_Hoa_AES
             CryptoStream cryptoStream = new CryptoStream(memoryStream, newRijndael.CreateEncryptor(), CryptoStreamMode.Write);
 
             // Ghi dữ liệu vào cryptoStream
-            cryptoStream.Write(clearData, 0, clearData.Length);
+            cryptoStream.Write(data, 0, data.Length);
             cryptoStream.Close();
 
             // Chuyển về dạng array
